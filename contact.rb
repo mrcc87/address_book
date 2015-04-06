@@ -10,6 +10,18 @@ class Contact
     @addresses = []
   end
 
+  def first_name
+    @first_name
+  end
+
+  def middle_name
+    @middle_name
+  end
+
+  def last_name
+    @last_name
+  end
+
   def add_phone_number(kind, number)
     phone_number = PhoneNumber.new
     phone_number.kind = kind
@@ -26,18 +38,6 @@ class Contact
     address.state = state
     address.postal_code = postal_code
     addresses.push(address)
-  end
-
-  def first_name
-    @first_name
-  end
-
-  def middle_name
-    @middle_name
-  end
-
-  def last_name
-    @last_name
   end
 
   def last_first
@@ -92,5 +92,3 @@ class Contact
     addresses.each { |address| puts address.to_s('short') }
   end
 end
-
-
